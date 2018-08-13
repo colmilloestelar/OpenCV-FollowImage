@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#include <opencv/cv.h>
+#include <opencv/highgui.h>
+
+int main(int argc, char** argv) {
+
+
+    IplImage* Img1 = cvLoadImage("test.jpg", 1);
+
+
+    cvNamedWindow("Ventana1", 1);
+
+    // Mostrar la imagen cargada en "ventana1"
+
+    cvShowImage("Ventana1", Img1);
+
+   //Esperamos antes de cerrarla
+    cvWaitKey(0);
+
+  //Liberamos la memoria y luego borramos la ventana.
+    cvReleaseImage(&Img1);
+    cvDestroyWindow("Ventana1");
+
+    return EXIT_SUCCESS;
+}
